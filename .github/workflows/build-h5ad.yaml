@@ -20,7 +20,7 @@ jobs:
       - name: Install dependencies
         run: |
           pip install --upgrade pip
-          pip install --upgrade spatialdata
+          pip install --upgrade spatialdata squidpy
 
       - name: Run script to build h5ad
         run: python get_spatial_data.py
