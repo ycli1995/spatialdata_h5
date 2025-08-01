@@ -10,7 +10,7 @@ sc.tl.leiden(adata, flavor="igraph", n_iterations=2, resolution = 0.1)
 
 sc.pl.umap(adata, color=["leiden"], show = False)
 
-sc.tl.rank_genes_groups(adata, groupby="leiden_res_0.50", method="wilcoxon")
+sc.tl.rank_genes_groups(adata, groupby="leiden", method="wilcoxon")
 
 print(adata)
 
