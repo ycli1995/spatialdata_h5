@@ -18,7 +18,7 @@ jobs:
       - name: Install dependencies
         run: |
           pip install --upgrade pip
-          pip install --upgrade spatialdata squidpy
+          pip install --upgrade spatialdata squidpy scanpy leidenalg
 
       - name: Run script to build h5ad
         run: python get_latest_anndata.py
