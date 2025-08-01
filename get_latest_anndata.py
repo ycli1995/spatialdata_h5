@@ -47,16 +47,18 @@ adata.obsm['bool'] = np.random.choice([True, False], size=(len(adata.obs_names),
 adata.obsm['bool_nan'] = adata.obsm['bool']
 adata.obsm['bool_nan'][np.ix_([1, 3, 5], [0, 1])] = np.nan
 
+obs_idx = adata.obs_names[[1, 3, 5]]
+adata.obs['nCount_RNA'] = adata.obs['nCount_RNA'].astype("Int64")
 adata.obs['integer_nan'] = adata.obs['nCount_RNA']
-adata.obs.loc[[1, 3, 5], 'integer_nan'] = np.nan
+adata.obs.loc[obs_idx, 'integer_nan'] = np.nan
 
-#adata.obs['string'] = np.random.choice(['True', 'False'], size=len(adata.obs_names))
-#adata.obs['string_nan'] = adata.obs['string']
-#adata.obs['string_nan'][[1, 3, 5]] = np.nan
+adata.obs['string'] = np.random.choice(['True', 'False'], size=len(adata.obs_names))
+adata.obs['string_nan'] = adata.obs['string']
+adata.obs['string_nan'][[1, 3, 5]] = np.nan
 
 adata.obs['bool'] = np.random.choice([True, False], size=len(adata.obs_names))
 adata.obs['bool_nan'] = adata.obs['bool']
-adata.obs.loc[[1, 3, 5], 'bool_nan'] = np.nan
+adata.obs.loc[obs_idx, 'bool_nan'] = np.nan
 
 print(adata)
 
