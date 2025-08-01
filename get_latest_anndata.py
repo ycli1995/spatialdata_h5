@@ -6,7 +6,7 @@ import numpy as np
 import random
 import string
 
-def random_str(max_len=10):
+def random_len_str(max_len=10):
     length = random.randint(1, max_len)  # 随机长度 1~10
     return ''.join(random.choices(string.ascii_letters, k=length))
 
