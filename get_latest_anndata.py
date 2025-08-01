@@ -4,6 +4,7 @@ import anndata as ad
 import numpy as np
 
 adata = sc.read("example.h5ad")
+adata.raw = adata
 
 print(adata)
 
