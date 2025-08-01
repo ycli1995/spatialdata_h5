@@ -18,6 +18,7 @@ def random_str_arr(rows, cols, str_fun):
     for i in range(rows):
         for j in range(cols):
             arr[i, j] = str_fun()
+    return arr
 
 
 adata = sc.read("pbmc_small.h5ad")
