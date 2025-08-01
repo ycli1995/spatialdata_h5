@@ -1,10 +1,5 @@
 name: Build AnnData h5ad
 
-on:
-  workflow_dispatch:   # 手动触发
-  schedule:
-    - cron: '0 0 * * 0' # 每周日自动运行
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -23,7 +18,7 @@ jobs:
           pip install --upgrade spatialdata squidpy
 
       - name: Run script to build h5ad
-        run: python get_spatial_data.py
+        run: python get_latest_anndata.py
 
       - name: Upload h5ad artifact
         uses: actions/upload-artifact@v4
