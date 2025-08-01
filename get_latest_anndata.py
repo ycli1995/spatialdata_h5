@@ -34,25 +34,25 @@ sc.tl.rank_genes_groups(adata, groupby="leiden", method="wilcoxon")
 adata.obsm['const_string_array'] = random_str_arr(len(adata.obs_names), 2, const_len_str)
 adata.obsm['random_string_array'] = random_str_arr(len(adata.obs_names), 2, random_len_str)
 
-adata.obsm['random_string_array_nan'] = adata.obsm['random_string_array']
-adata.obsm['random_string_array_nan'][np.ix_([1, 3, 5], [0, 1])] = None
+#adata.obsm['random_string_array_nan'] = adata.obsm['random_string_array']
+#adata.obsm['random_string_array_nan'][np.ix_([1, 3, 5], [0, 1])] = None
 
-adata.obsm['const_string_array_nan'] = adata.obsm['const_string_array']
-adata.obsm['const_string_array_nan'][np.ix_([1, 3, 5], [0, 1])] = None
+#adata.obsm['const_string_array_nan'] = adata.obsm['const_string_array']
+#adata.obsm['const_string_array_nan'][np.ix_([1, 3, 5], [0, 1])] = None
 
 adata.obsm['umap_nan'] = adata.obsm['umap']
-adata.obsm['umap_nan'][np.ix_([1, 3, 5], [0, 1])] = None
+adata.obsm['umap_nan'][np.ix_([1, 3, 5], [0, 1])] = np.nan
 
 adata.obsm['bool'] = np.random.choice([True, False], size=(len(adata.obs_names), 2))
 adata.obsm['bool_nan'] = adata.obsm['bool']
-adata.obsm['bool_nan'][np.ix_([1, 3, 5], [0, 1])] = None
+adata.obsm['bool_nan'][np.ix_([1, 3, 5], [0, 1])] = np.nan
 
 adata.obs['integer_nan'] = adata.obs['nCount_RNA']
 adata.obs['integer_nan'][[1, 3, 5]] = np.nan
 
-adata.obs['string'] = np.random.choice(['True', 'False'], size=len(adata.obs_names))
-adata.obs['string_nan'] = adata.obs['string']
-adata.obs['string_nan'][[1, 3, 5]] = np.nan
+#adata.obs['string'] = np.random.choice(['True', 'False'], size=len(adata.obs_names))
+#adata.obs['string_nan'] = adata.obs['string']
+#adata.obs['string_nan'][[1, 3, 5]] = np.nan
 
 adata.obs['bool'] = np.random.choice([True, False], size=len(adata.obs_names))
 adata.obs['bool_nan'] = adata.obs['bool']
