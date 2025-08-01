@@ -27,5 +27,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: latest_h5ad
-          path: latest_anndata.h5ad
+          path: latest_adata.h5ad
 
